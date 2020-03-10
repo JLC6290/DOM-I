@@ -42,13 +42,19 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // populate navigation elements
+
+document.querySelector("nav").appendChild(document.createElement("a"));
+document.querySelector("nav").prepend(document.createElement("a"));
+
 let navLinks = document.querySelectorAll("a")
-navLinks[0].textContent = siteContent.nav["nav-item-1"];
-navLinks[1].textContent = siteContent.nav["nav-item-2"];
-navLinks[2].textContent = siteContent.nav["nav-item-3"];
-navLinks[3].textContent = siteContent.nav["nav-item-4"];
-navLinks[4].textContent = siteContent.nav["nav-item-5"];
-navLinks[5].textContent = siteContent.nav["nav-item-6"];
+navLinks[0].textContent = "prepend";
+navLinks[1].textContent = siteContent.nav["nav-item-1"];
+navLinks[2].textContent = siteContent.nav["nav-item-2"];
+navLinks[3].textContent = siteContent.nav["nav-item-3"];
+navLinks[4].textContent = siteContent.nav["nav-item-4"];
+navLinks[5].textContent = siteContent.nav["nav-item-5"];
+navLinks[6].textContent = siteContent.nav["nav-item-6"];
+navLinks[7].textContent = "append";
 
 // populate header
 let cta = document.querySelector("h1");
@@ -86,6 +92,9 @@ document.querySelector("footer p").textContent = siteContent["footer"]["copyrigh
 
 
 // styling
+navLinks.forEach(item => item.style.color = 'green');
 
+// add stuff
+document.querySelector("nav").appendChild(document.createElement("a"));
 
-
+navLinks[6].textContent = "append";
